@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
        btnGetLyrics.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-             //  Toast.makeText(MainActivity.this, "now button is tapped", Toast.LENGTH_SHORT).show();
+             Toast.makeText(MainActivity.this, "now button is tapped", Toast.LENGTH_SHORT).show();
 
                 String url = "https://api.lyrics.ovh/v1/"+edtArtistName.getText().toString()+"/"+edtSongName.getText().toString();
               url.replace(" ","20%");

@@ -1,8 +1,17 @@
 package com.example.lyricsfinder;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.textclassifier.ConversationActions;
 import android.widget.Button;
@@ -20,6 +29,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.OutputStream;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -31,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         edtArtistName=findViewById(R.id.edtArtistName);
         edtSongName=findViewById(R.id.edtSongName);
@@ -65,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
                requestQueue.add(jsonObjectRequest);
            }
        });
-
-
+       }
     }
-}
+
+
+
